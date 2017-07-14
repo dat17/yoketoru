@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour {
+	void Start() {
+		GameParams.DrawScore ();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		// Fire1キーが押されたら、Gameシーンに切り替え
