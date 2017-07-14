@@ -11,6 +11,16 @@ using UnityEngine.SceneManagement;
 /// </summary>
 
 public class GameManager : MonoBehaviour {
+	// 敵のプレハブ
+	public GameObject prefTeki;
+	// 敵を出現させる数
+	public int TekiCount = 4;
+
+	// アイテムのプレハブ
+	public GameObject prefItem;
+	// アイテムを出現させる数
+	public int ItemCount = 10;
+
 	// 次のシーンを記録する
 	private static string _nextScene = "";
 	// 次のシーンを指定する変数。空文字の時は何もしない
@@ -30,6 +40,17 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameParams.SetScore (0);
+		_nextScene = "";
+		MoveBall.ClearBallCount ();
+
+		// 敵を出現
+		for (int i = 0; i < TekiCount; i++) {
+			Instantiate (prefTeki);
+		}
+		// アイテムを出現
+		for (int i = 0; i < ItemCount; i++) {
+			Instantiate (prefItem);
+		}
 	}
 	
 	// Update is called once per frame

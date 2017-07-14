@@ -29,7 +29,9 @@ public class GameParams : MonoBehaviour {
 	}
 
 	public static void DrawScore() {
-		_instance.scoreText.text = "Score " + _score.ToString ("D6");
+		if (_instance.scoreText != null) {
+			_instance.scoreText.text = "Score " + _score.ToString ("D6");
+		}
 	}
 
 }
