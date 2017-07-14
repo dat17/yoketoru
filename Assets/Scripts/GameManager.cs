@@ -11,8 +11,21 @@ using UnityEngine.SceneManagement;
 /// </summary>
 
 public class GameManager : MonoBehaviour {
+	// 次のシーンを記録する
+	private static string _nextScene = "";
 	// 次のシーンを指定する変数。空文字の時は何もしない
-	public static string NextScene = "";
+	public static string NextScene {
+		get { return _nextScene; }
+		set {
+			// 現在Clearが設定されていないか、
+			// あるいは、新しく空文字を設定したい時に設定を許可する
+			if (	(_nextScene != "Clear") 
+				||	(value == ""))
+			{
+				_nextScene = value;
+			}
+		}
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +41,7 @@ public class GameManager : MonoBehaviour {
 		// Cキー
 		else if (Input.GetKeyDown (KeyCode.C)) {
 			NextScene = "Clear";
+			NextScene = "GameOver";
 		}
 		// Aキー
 		else if (Input.GetKey (KeyCode.A)) {
