@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		GameParams.SetScore (0);
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour {
 		// Cキー
 		else if (Input.GetKeyDown (KeyCode.C)) {
 			NextScene = "Clear";
+		}
+		// Aキー
+		else if (Input.GetKey (KeyCode.A)) {
+			GameParams.AddScore (100);
 		}
 
 		// シーン切り替え処理
