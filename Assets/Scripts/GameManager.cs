@@ -37,13 +37,19 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
+    // Use this for initialization
+    void Start () {
 		GameParams.SetScore (0);
 		_nextScene = "";
 		MoveBall.ClearBallCount ();
 
 		// 敵を出現
+        /*
 		for (int i = 0; i < TekiCount; i++) {
 			Instantiate (prefTeki);
 		}
@@ -51,6 +57,7 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < ItemCount; i++) {
 			Instantiate (prefItem);
 		}
+        */
 	}
 	
 	// Update is called once per frame
@@ -74,6 +81,7 @@ public class GameManager : MonoBehaviour {
 			SceneManager.LoadSceneAsync (NextScene, LoadSceneMode.Additive);
 			NextScene = "";
 			enabled = false;
+            Time.timeScale = 0;
 		}
 	}
 }

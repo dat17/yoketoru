@@ -24,6 +24,7 @@ public class MoveBall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        /*
 		rig = GetComponent<Rigidbody> ();
 		rig.velocity = new Vector3 (vx, vy, 0f);
 
@@ -33,6 +34,7 @@ public class MoveBall : MonoBehaviour {
 			Random.Range (MIN_Y, MAX_Y),
 			0f);
 		transform.position = pos;
+        */
 
 		// 自分のタグがItemかを確認
 		// if文で条件式が省略されていた場合、
