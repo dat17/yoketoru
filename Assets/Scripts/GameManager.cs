@@ -33,16 +33,20 @@ public class GameManager : MonoBehaviour {
 				||	(value == ""))
 			{
 				_nextScene = value;
+				Time.timeScale = 0f;
 			}
 		}
 	}
 
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 1f;
+
 		GameParams.SetScore (0);
 		_nextScene = "";
 		MoveBall.ClearBallCount ();
 
+		/*
 		// 敵を出現
 		for (int i = 0; i < TekiCount; i++) {
 			Instantiate (prefTeki);
@@ -51,6 +55,7 @@ public class GameManager : MonoBehaviour {
 		for (int i = 0; i < ItemCount; i++) {
 			Instantiate (prefItem);
 		}
+		*/
 	}
 	
 	// Update is called once per frame
