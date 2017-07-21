@@ -15,6 +15,8 @@ public class MoveBall : MonoBehaviour {
 	public float MIN_Y = -4f;
 	public float MAX_Y = 6f;
 
+	private AudioSource audioSource;
+
 	// ボールの個数
 	private static int BallCount=0;
 
@@ -25,6 +27,7 @@ public class MoveBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rig = GetComponent<Rigidbody> ();
+		audioSource = GetComponent<AudioSource> ();
 
 		/*
 		rig.velocity = new Vector3 (vx, vy, 0f);
@@ -56,6 +59,7 @@ public class MoveBall : MonoBehaviour {
 		// 相手がプレイヤー？
 		if (col.CompareTag ("Player")) {
 			if (CompareTag ("Item")) {
+				GameManager.PlaySE (0);
 				GameParams.AddScore (100);
 				Destroy (gameObject);
 

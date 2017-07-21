@@ -16,6 +16,19 @@ public class GameManager : MonoBehaviour {
 	// 敵を出現させる数
 	public int TekiCount = 4;
 
+	// 効果音
+	public AudioClip [] SE;
+	public AudioSource SEAudio;
+	private static GameManager _instance;
+
+	/// <summary>
+	/// 効果音を鳴らす
+	/// </summary>
+	/// <param name="num">Number.</param>
+	public static void PlaySE(int num) {
+		_instance.SEAudio.PlayOneShot (_instance.SE [num]);
+	}
+
 	// アイテムのプレハブ
 	public GameObject prefItem;
 	// アイテムを出現させる数
@@ -45,6 +58,8 @@ public class GameManager : MonoBehaviour {
 		GameParams.SetScore (0);
 		_nextScene = "";
 		MoveBall.ClearBallCount ();
+
+		_instance = this;
 
 		/*
 		// 敵を出現
