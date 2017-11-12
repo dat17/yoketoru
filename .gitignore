@@ -4,6 +4,8 @@
 /[Bb]uild/
 /[Bb]uilds/
 /[Ee]xe/
+/Assets/[Pp]ro[Cc]ore/
+/Assets/[Pp]ro[Cc]ore.meta
 /Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
