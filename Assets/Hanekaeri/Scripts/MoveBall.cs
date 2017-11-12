@@ -45,7 +45,7 @@ public class MoveBall : MonoBehaviour {
 		// 条件式のところが、trueかfalseを返すようになっている
 		if (CompareTag ("Item")) {
 			BallCount++;
-			Debug.Log (BallCount);
+			//Debug.Log (BallCount);
 			//CountText.text = "" + BallCount;
 		}
 	}
@@ -59,7 +59,7 @@ public class MoveBall : MonoBehaviour {
 		// 相手がプレイヤー？
 		if (col.CompareTag ("Player")) {
 			if (CompareTag ("Item")) {
-				GameManager.PlaySE (0);
+				GameManager.PlaySE (GameManager.SE_ID.GET);
 				GameParams.AddScore (100);
 				Destroy (gameObject);
 

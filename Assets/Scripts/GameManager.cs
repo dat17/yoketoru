@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour {
 	public int TekiCount = 4;
 
 	// 効果音
+    public enum SE_ID
+    {
+        CLICK,
+        GET,
+        DEAD
+    };
 	public AudioClip [] SE;
 	public AudioSource SEAudio;
 	private static GameManager _instance;
@@ -25,8 +31,8 @@ public class GameManager : MonoBehaviour {
 	/// 効果音を鳴らす
 	/// </summary>
 	/// <param name="num">Number.</param>
-	public static void PlaySE(int num) {
-		_instance.SEAudio.PlayOneShot (_instance.SE [num]);
+	public static void PlaySE(SE_ID seid) {
+		_instance.SEAudio.PlayOneShot (_instance.SE [(int)seid]);
 	}
 
 	// アイテムのプレハブ

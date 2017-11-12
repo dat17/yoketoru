@@ -39,8 +39,9 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter(Collider col) {
 		// ぶつかった相手がTekiだったら、自分を消す
 		if (col.CompareTag ("Teki")) {
-			Destroy (gameObject);
-			GameManager.NextScene = "GameOver";
+            GameManager.PlaySE(GameManager.SE_ID.DEAD);
+            Destroy(gameObject);
+            GameManager.NextScene = "GameOver";
 		}
 	}
 }
