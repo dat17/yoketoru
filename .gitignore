@@ -7,6 +7,8 @@
 /Assets/[Pp]ro[Cc]ore/
 /Assets/[Pp]ro[Cc]ore.meta
 /Assets/AssetStoreTools*
+/Assets/ML-Agents/
+/Assets/ML-Agents.meta
 
 # Visual Studio 2015 cache directory
 /.vs/
